@@ -25,13 +25,14 @@
       ge.getWindow().setVisibility(true);
 
       // add a navigation control
-      ge.getNavigationControl().setVisibility(ge.VISIBILITY_AUTO);
+      ge.getNavigationControl().setVisibility(ge.VISIBILITY_HIDE);
 
       // add some layers
       //ge.getLayerRoot().enableLayerById(ge.LAYER_BORDERS, true);
       //ge.getLayerRoot().enableLayerById(ge.LAYER_ROADS, true);
       
       ge.getOptions().setAtmosphereVisibility(true);
+      ge.getOptions().setOverviewMapVisibility(true);
 
       createFullScreenIcon();
       createNormalScreenIcon();
