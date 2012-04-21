@@ -34,7 +34,7 @@
       var content = document.getElementById('content');
       google.earth.createInstance('content', initCB, failureCB);
 
-      window.setInterval("update()", 2000);
+      window.setInterval("update()", 1000);
       //alert("Longitude: " + getGeo()['longitude'] + " Latitude: " + getGeo()['latitude'] + " Altitude: " + getGeo()['altitude']);
     }
     
@@ -222,7 +222,10 @@
       //alert(getGeo());
 
       var lookAt = ge.getView().copyAsLookAt(ge.ALTITUDE_RELATIVE_TO_GROUND);
+      var camera = ge.getView().copyAsCamera(ge.ALTITUDE_RELATIVE_TO_GROUND);
       
+      camera.setAltitude(getGeo()['altitude']);
+
       // Set new latitude and longitude values
       //lookAt.setLatitude(36.584207);
       //lookAt.setLongitude(-121.754322);
@@ -231,6 +234,7 @@
 
       // Update the view in Google Earth
       ge.getView().setAbstractView(lookAt);
+      ge.getView().setAbstractView(camera);
     }
 
     google.setOnLoadCallback(init);
