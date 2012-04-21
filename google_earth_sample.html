@@ -12,7 +12,7 @@
     var noFullScreenIcon = null;
     var fullScreenIcon = null;
     google.load("earth", "1");
-    google.load("maps", "2");
+    //google.load("maps", "2");
     
     function init() {
       // Create a button and input box.
@@ -23,10 +23,10 @@
     function initCB(instance) {
       ge = instance;
       ge.getWindow().setVisibility(true);
-    
+
       // add a navigation control
       ge.getNavigationControl().setVisibility(ge.VISIBILITY_AUTO);
-    
+
       // add some layers
       ge.getLayerRoot().enableLayerById(ge.LAYER_BORDERS, true);
       ge.getLayerRoot().enableLayerById(ge.LAYER_ROADS, true);
