@@ -6,8 +6,8 @@
 <title>Google Earth Sample</title>
 
 <script type="text/javascript" src="http://www.google.com/jsapi?hl=en&amp;key=ABQIAAAAuMdjTKAMJZ-jFrRfJbEAbRRCICiVAr1cJd1br9_H8FTxzzTnTRRbpje9DSnPy9mxywdygGusUG8MbQ"></script>
-    <script type="text/javascript" src="https://github.com/lizard-isana/orb.js/blob/master/satellite.js"></script>
-    <script type="text/javascript" src="https://github.com/lizard-isana/orb.js/blob/master/core.js"></script>
+    <script type="text/javascript" src="https://raw.github.com/lizard-isana/orb.js/master/core.js"></script>
+    <script type="text/javascript" src="https://raw.github.com/lizard-isana/orb.js/master/satellite.js"></script>
     <script type="text/javascript">
     function getGeo() {
       var tle = {
@@ -217,7 +217,7 @@
  
     function update() {
       //alert("update");
-      //alert(getGeo());
+      alert(getGeo());
 
       var lookAt = ge.getView().copyAsLookAt(ge.ALTITUDE_RELATIVE_TO_GROUND);
       

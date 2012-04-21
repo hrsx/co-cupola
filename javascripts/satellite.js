@@ -55,8 +55,7 @@ Orb.Satellite = Orb.Satellite || function(tle){
       check_sum_2 :   Number(line1.substring(68,69))
     }
     return orbital_elements
-  }
-  
+  }  
 
   var _setSGP4 = function(orbital_elements){
     var torad = Math.PI/180;
@@ -228,8 +227,7 @@ Orb.Satellite = Orb.Satellite || function(tle){
       var epoch_sec=Date.UTC(year2, 11, 31, 0, 0, 0)+(epoch*24*60*60*1000);
       var elapsed_time=(now_sec-epoch_sec)/(60*1000);
       return elapsed_time;
-    })(time,orbital_elements)
-    
+    })(time,orbital_elements) 
    
     var xmo=sgp4.xmo;
     var xmdot=sgp4.xmdot;
