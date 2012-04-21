@@ -38,7 +38,7 @@
       // Overview Map
       ge.getOptions().setOverviewMapVisibility(true);
 
-      ge.getOptions().setFlyToSpeed(0.5);
+      ge.getOptions().setFlyToSpeed(0.2);
       
       createFullScreenIcon();
       createNormalScreenIcon();
@@ -81,7 +81,10 @@
 	  // Add the ScreenOverlay to Earth
 	  ge.getFeatures().appendChild(screenOverlay);
 
-      ge.getView().setAbstractView(lookAt);
+      //ge.getView().setAbstractView(lookAt);
+      var camera = ge.getView().copyAsCamera(ge.ALTITUDE_RELATIVE_TO_GROUND);
+      camera.setAltitude(40);
+      ge.getView().setAbstractView(camera);
     }
     
     function failureCB(errorCode) {
@@ -207,12 +210,8 @@
       lookAt.setLatitude(lookAt.getLatitude() + 5.0);
       lookAt.setLongitude(lookAt.getLongitude() + 5.0);
 
-      var camera = ge.getView().copyAsCamera(ge.ALTITUDE_RELATIVE_TO_GROUND);
-      camera.setAltitude(40);
-      
       // Update the view in Google Earth
       ge.getView().setAbstractView(lookAt);
-      ge.getView().setAbstractView(camera);
     }
 
     google.setOnLoadCallback(init);
