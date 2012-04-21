@@ -54,7 +54,7 @@
       // Overview Map
       ge.getOptions().setOverviewMapVisibility(true);
 
-      ge.getOptions().setFlyToSpeed(1.0);
+      ge.getOptions().setFlyToSpeed(0.5);
       ge.getOptions().setUnitsFeetMiles(false);
       ge.getOptions().setTerrainExaggeration(2.5);
 
@@ -100,8 +100,8 @@
 
       //ge.getView().setAbstractView(lookAt);
       var camera = ge.getView().copyAsCamera(ge.ALTITUDE_RELATIVE_TO_GROUND);
-      camera.setAltitude(40000);
-      ge.getView().setAbstractView(camera);
+      //camera.setAltitude(40000);
+      //ge.getView().setAbstractView(camera);
     }
     
     function failureCB(errorCode) {
