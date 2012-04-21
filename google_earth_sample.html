@@ -226,17 +226,15 @@
           lookAt.setLatitude(getGeo()['latitude']);
           lookAt.setLongitude(getGeo()['longitude']);
           ge.getView().setAbstractView(lookAt);
-          google.earth.removeEventListener(ge.getView(), 'viewchangeend', onViewChangeEnd);
+          google.earth.removeEventListener(ge, 'viewchangeend', onViewChangeEnd);
       };
 
-      google.earth.addEventListener(ge.getView(), 'viewchangeend', onViewChangeEnd);
-      camera.setAltitude(getGeo()['altitude'] * 100);
+      google.earth.addEventListener(ge, 'viewchangeend', onViewChangeEnd);
+      camera.setAltitude(getGeo()['altitude'] * 100); // XXX
       ge.getView().setAbstractView(camera);
       //ge.removeEventListener(ge.getView(), 'viewchangeend', onViewChangeEnd);
       
       // Set new latitude and longitude values
-      //lookAt.setLatitude(36.584207);
-      //lookAt.setLongitude(-121.754322);
       //lookAt.setLatitude(getGeo()['latitude']);
       //lookAt.setLongitude(getGeo()['longitude']);
 
