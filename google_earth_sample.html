@@ -78,6 +78,8 @@
 
 	  // Add the ScreenOverlay to Earth
 	  ge.getFeatures().appendChild(screenOverlay);
+
+      ge.getView().setAbstractView(lookAt);
     }
     
     function failureCB(errorCode) {
