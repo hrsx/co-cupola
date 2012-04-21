@@ -99,9 +99,9 @@
 	  ge.getFeatures().appendChild(screenOverlay);
 
       //ge.getView().setAbstractView(lookAt);
-      var camera = ge.getView().copyAsCamera(ge.ALTITUDE_RELATIVE_TO_GROUND);
-      camera.setAltitude(40000);
-      ge.getView().setAbstractView(camera);
+      //var camera = ge.getView().copyAsCamera(ge.ALTITUDE_RELATIVE_TO_GROUND);
+      //camera.setAltitude(40000);
+      //ge.getView().setAbstractView(camera);
     }
     
     function failureCB(errorCode) {
@@ -231,7 +231,7 @@
       };
 
       google.earth.addEventListener(ge.getView(), 'viewchangeend', onViewChangeEnd);
-      camera.setAltitude(getGeo()['altitude']);
+      camera.setAltitude(getGeo()['altitude'] * 100);
       ge.getView().setAbstractView(camera);
       google.earth.removeEventListener(ge.getView(), 'viewchangeend', onViewChangeEnd);
       
