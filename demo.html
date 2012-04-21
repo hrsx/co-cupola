@@ -17,12 +17,11 @@
         zoom: 8,
         center: latlng,
         disableDefaultUI: true,
-        mapTypeId: google.maps.MapTypeId.TERRAIN
+        mapTypeId: google.maps.MapTypeId.SATELLITE
     };
     var map = new google.maps.Map(document.getElementById("map_canvas"),
         myOptions);
   }
-
 </script>
 </head>
 <body onload="initialize()">
