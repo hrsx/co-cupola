@@ -40,6 +40,9 @@
       
       ge.getOptions().setFlyToSpeed(0.5);
 
+      var camera = ge.getView().copyAsCamera(ge.ALTITUDE_RELATIVE_TO_GROUND);
+      camera.setAltitude(4500);
+
       createFullScreenIcon();
       createNormalScreenIcon();
 	  toggleFullScreen();
@@ -204,8 +207,8 @@
       // Set new latitude and longitude values
       //lookAt.setLatitude(36.584207);
       //lookAt.setLongitude(-121.754322);
-      lookAt.setLatitude(lookAt.getLatitude() + 25.0);
-      lookAt.setLongitude(lookAt.getLongitude() + 25.0);
+      lookAt.setLatitude(lookAt.getLatitude() + 10.0);
+      lookAt.setLongitude(lookAt.getLongitude() + 10.0);
 
       // Update the view in Google Earth
       ge.getView().setAbstractView(lookAt);
