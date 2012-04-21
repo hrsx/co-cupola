@@ -56,7 +56,7 @@
 	  screenOverlay.setIcon(icon);
 
 	  // Set the ScreenOverlay's position in the window
-        var samplecontainer = document.getElementById('fullscreencontainer');
+      var samplecontainer = document.getElementById('fullscreencontainer');
 
 	  screenOverlay.getOverlayXY().setXUnits(ge.UNITS_PIXELS);
 	  screenOverlay.getOverlayXY().setYUnits(ge.UNITS_PIXELS);
@@ -100,8 +100,7 @@
     function toggleFullScreen() {
       if (fullScreenState == true) {
         makeNormalScreen();
-      }
-      else {
+      } else {
         makeFullScreen();
       }
     }
@@ -200,6 +199,16 @@
  
     function update() {
       //alert("update");
+      var lookAt = ge.getView().copyAsLookAt(ge.ALTITUDE_RELATIVE_TO_GROUND);
+      
+      // Set new latitude and longitude values
+      //lookAt.setLatitude(36.584207);
+      //lookAt.setLongitude(-121.754322);
+      lookAt.setLatitude(lookAt.getLatitude() + 25.0);
+      lookAt.setLongitude(lookAt.getLongitude() + 25.0);
+
+      // Update the view in Google Earth
+      ge.getView().setAbstractView(lookAt);
     }
 
     google.setOnLoadCallback(init);
