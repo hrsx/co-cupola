@@ -30,8 +30,8 @@
       // add some layers
       //ge.getLayerRoot().enableLayerById(ge.LAYER_BORDERS, true);
       //ge.getLayerRoot().enableLayerById(ge.LAYER_ROADS, true);
-      
-      ge.getOptions().setAtmosphereVisibility(true);
+      ge.getLayerRoot().enableLayerById(ge.LAYER_TERRIAN, true);
+      ge.getOptions().setAtmosphereVisibility(false);
       ge.getOptions().setOverviewMapVisibility(true);
 
       createFullScreenIcon();
