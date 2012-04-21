@@ -15,10 +15,11 @@
         "second_line": "2 25544  51.6365 124.1685 0021724  56.2169 304.1052 15.60123650 24381"
       }
       var satellite = new Orb.Satellite(tle);
+      alert(satellite);
       var date = new Date();
       var time = new Orb.Time(date);
       var geo = satellite.position.geographic(time);
-      alert(geo);
+      //alert(geo);
     }
 
     var ge;
