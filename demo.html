@@ -7,7 +7,7 @@ Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
 <html xmlns="http://www.w3.org/1999/xhtml">
   <head>
     <meta http-equiv="content-type" content="text/html; charset=utf-8"/>
-    <title>Google Earth API Sample</title>
+    <title>co-cupola -- Demo --</title>
     <script src="http://www.google.com/jsapi?key=ABQIAAAAuPsJpk3MBtDpJ4G8cqBnjRRaGTYH6UMl8mADNa0YKuWNNa8VNxQCzVBXTx2DYyXGsTOxpWhvIG7Djw" type="text/javascript"></script>
     <script type="text/javascript">
     var ge;
@@ -37,6 +37,16 @@ Apache license (http://www.apache.org/licenses/LICENSE-2.0.html)
     function failureCallback(errorCode) {
     }
     
+    function load() {
+        if (GBrowserIsCompatible()) {
+            var map = new GMap2(document.getElementById("map"));
+            map.addControl(new GLargeMapControl());
+            map.addControl(new GMapTypeControl());
+            map.setCenter(new GLatLng(40.743884, -73.974666), 13);
+            var kmlUrl = "http://axelspace.com/mrorbit/CurrentOrbit.kml";
+            var kml = new GGeoXml(kmlUrl);
+            map.addOverlay(kml);
+    }
     </script>
     <style type="text/css">
         html, body {width:100%; height:100%;}
