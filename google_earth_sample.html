@@ -218,14 +218,11 @@
     }
  
     function update() {
-      //alert("update");
-      //alert(getGeo());
-
       var lookAt = ge.getView().copyAsLookAt(ge.ALTITUDE_RELATIVE_TO_GROUND);
       var camera = ge.getView().copyAsCamera(ge.ALTITUDE_RELATIVE_TO_GROUND);
       
       var onViewChangeEnd = function() {
-          alert("onViewChangeEnd");
+          console.log("onViewChangeEnd");
           lookAt.setLatitude(getGeo()['latitude']);
           lookAt.setLongitude(getGeo()['longitude']);
           ge.getView().setAbstractView(lookAt);
