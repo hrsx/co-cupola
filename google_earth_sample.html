@@ -37,12 +37,12 @@
 
       // Overview Map
       ge.getOptions().setOverviewMapVisibility(true);
-      
-      ge.getOptions().setFlyToSpeed(0.5);
 
       var camera = ge.getView().copyAsCamera(ge.ALTITUDE_RELATIVE_TO_GROUND);
-      camera.setAltitude(4500);
+      camera.setAltitude(400);
 
+      ge.getOptions().setFlyToSpeed(0.5);
+      
       createFullScreenIcon();
       createNormalScreenIcon();
 	  toggleFullScreen();
