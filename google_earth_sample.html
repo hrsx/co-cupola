@@ -222,10 +222,10 @@
       var camera = ge.getView().copyAsCamera(ge.ALTITUDE_RELATIVE_TO_GROUND);
       
       var onViewChangeEnd = function() {
-          console.log("onViewChangeEnd");
-          lookAt.setLatitude(getGeo()['latitude']);
-          lookAt.setLongitude(getGeo()['longitude']);
-          ge.getView().setAbstractView(lookAt);
+          //console.log("onViewChangeEnd");
+          //lookAt.setLatitude(getGeo()['latitude']);
+          //lookAt.setLongitude(getGeo()['longitude']);
+          //ge.getView().setAbstractView(lookAt);
           //google.earth.removeEventListener(ge.getView(), 'viewchangeend', onViewChangeEnd);
       };
 
@@ -239,7 +239,9 @@
       //lookAt.setLongitude(getGeo()['longitude']);
 
       // Update the view in Google Earth
-      //ge.getView().setAbstractView(lookAt);
+      lookAt.setLatitude(getGeo()['latitude']);
+      lookAt.setLongitude(getGeo()['longitude']);
+      ge.getView().setAbstractView(lookAt);
       //ge.getView().setAbstractView(camera);
     }
 
