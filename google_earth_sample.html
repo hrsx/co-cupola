@@ -32,7 +32,10 @@
       //ge.getLayerRoot().enableLayerById(ge.LAYER_ROADS, true);
       ge.getLayerRoot().enableLayerById(ge.LAYER_TERRAIN, true);
       ge.getOptions().setAtmosphereVisibility(true);
+
+      // Overview Map
       ge.getOptions().setOverviewMapVisibility(true);
+      ge.getOptions().getOverviewMap().getScreenXY().setXUnits(ge.UNITS_PIXELS);
 
       createFullScreenIcon();
       createNormalScreenIcon();
