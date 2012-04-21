@@ -18,6 +18,8 @@
       // Create a button and input box.
       var content = document.getElementById('content');
       google.earth.createInstance('content', initCB, failureCB);
+
+      window.setInterval("update()", 1000);
     }
     
     function initCB(instance) {
@@ -196,9 +198,12 @@
       }
     }
  
+    function update() {
+      alert("update");
+    }
+
     google.setOnLoadCallback(init);
     </script>
-
 </head>
 <body onresize="handleFullScreen();" bgcolor="#F9F8F9" link="#54006C" vlink="#270037" alink="#00FFFF">
 <div id="fullscreencontainer" style="position: absolute; left: 0px; top: 0px; width: 100%; height: 100%;"></div>
