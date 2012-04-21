@@ -229,9 +229,10 @@
           lookAt.setLatitude(getGeo()['latitude']);
           lookAt.setLongitude(getGeo()['longitude']);
           ge.getView().setAbstractView(lookAt);
+          google.earth.removeEventListener(ge.getView(), 'viewchangeend', onViewChangeEnd);
       };
 
-      ge.addEventListener(ge.getView(), 'viewchangeend', onViewChangeEnd);
+      google.earth.addEventListener(ge.getView(), 'viewchangeend', onViewChangeEnd);
       camera.setAltitude(getGeo()['altitude'] * 100);
       ge.getView().setAbstractView(camera);
       //ge.removeEventListener(ge.getView(), 'viewchangeend', onViewChangeEnd);
