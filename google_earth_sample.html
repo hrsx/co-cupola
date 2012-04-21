@@ -225,6 +225,7 @@
       var camera = ge.getView().copyAsCamera(ge.ALTITUDE_RELATIVE_TO_GROUND);
       
       var onViewChangeEnd = function() {
+          alert("onViewChangeEnd");
           lookAt.setLatitude(getGeo()['latitude']);
           lookAt.setLongitude(getGeo()['longitude']);
           ge.getView().setAbstractView(lookAt);
