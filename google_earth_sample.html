@@ -219,7 +219,7 @@
  
     function update() {
       var lookAt = ge.getView().copyAsLookAt(ge.ALTITUDE_RELATIVE_TO_GROUND);
-      var camera = ge.getView().copyAsCamera(ge.ALTITUDE_RELATIVE_TO_GROUND);
+      //var camera = ge.getView().copyAsCamera(ge.ALTITUDE_RELATIVE_TO_GROUND);
       
       var onViewChangeEnd = function() {
           //console.log("onViewChangeEnd");
@@ -229,9 +229,9 @@
           //google.earth.removeEventListener(ge.getView(), 'viewchangeend', onViewChangeEnd);
       };
 
-      google.earth.addEventListener(ge.getView(), 'viewchangeend', onViewChangeEnd);
-      camera.setAltitude(getGeo()['altitude'] * 100); // XXX
-      ge.getView().setAbstractView(camera);
+      //google.earth.addEventListener(ge.getView(), 'viewchangeend', onViewChangeEnd);
+      //camera.setAltitude(getGeo()['altitude'] * 100); // XXX
+      //ge.getView().setAbstractView(camera);
       //ge.removeEventListener(ge.getView(), 'viewchangeend', onViewChangeEnd);
       
       // Set new latitude and longitude values
