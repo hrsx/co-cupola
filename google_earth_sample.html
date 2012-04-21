@@ -231,10 +231,10 @@
           ge.getView().setAbstractView(lookAt);
       };
 
-      google.earth.addEventListener(ge.getView(), 'viewchangeend', onViewChangeEnd);
+      ge.addEventListener(ge.getView(), 'viewchangeend', onViewChangeEnd);
       camera.setAltitude(getGeo()['altitude'] * 100);
       ge.getView().setAbstractView(camera);
-      google.earth.removeEventListener(ge.getView(), 'viewchangeend', onViewChangeEnd);
+      ge.removeEventListener(ge.getView(), 'viewchangeend', onViewChangeEnd);
       
       // Set new latitude and longitude values
       //lookAt.setLatitude(36.584207);
