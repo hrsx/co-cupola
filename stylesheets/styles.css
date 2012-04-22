@@ -2,26 +2,37 @@
 
 body {
   padding:50px;
-  font:14px/1.5 Lato, "Helvetica Neue", Helvetica, Arial, sans-serif;
+  font:14px/1.5 Helvetica, "Lucida Grande","Hiragino Kaku Gothic Pro","ヒラギノ角ゴ Pro W3","メイリオ", "ＭＳ Ｐゴシック","Lucida Sans Unicode",Arial,Verdana,sans-serif;
   color:#777;
   font-weight:300;
 }
 
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h5, h6 {
   color:#222;
   margin:0 0 20px;
 }
 
-p, ul, ol, table, pre, dl {
-  margin:0 0 20px;
+h4  {
+  color:#222;
+  margin:0 0 6px;
 }
+
+
+p, ul, ol, table, pre, dl {
+  margin:0 0 14px;
+}
+
+p .list  {
+  margin:0 0 8px;
+}
+
 
 h1, h2, h3 {
   line-height:1.1;
 }
 
 h1 {
-  font-size:28px;
+  font-size:32px;
 }
 
 h2 {
