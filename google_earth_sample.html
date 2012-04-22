@@ -33,7 +33,7 @@
         if(httpRequest.readyState == 4 && httpRequest.status == 200) {
           tle = eval( "(" + httpRequest.responseText + ")" );
         } else {
-          alert( "There was a problem with the TLE URL." );
+          console.log("There was a problem with the TLE URL.");
         }
         httpRequest = null;
       }
