@@ -59,7 +59,7 @@
       var content = document.getElementById('content');
       google.earth.createInstance('content', initCB, failureCB);
 
-      window.setInterval("update()", 100);
+      window.setInterval("update()", 500);
       console.log("Longitude: " + getGeo()['longitude'] + " Latitude: " + getGeo()['latitude'] + " Altitude: " + getGeo()['altitude']);
     }
     
