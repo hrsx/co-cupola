@@ -35,6 +35,7 @@
       httpRequest.onreadystatechange = function() {
         //if(httpRequest.readyState == 4 && httpRequest.status == 200) {
           responseText = eval( "(" + httpRequest.responseText + ")" );
+          console.log(responseText);
         //} else {
         //  console.log("There was a problem with the TLE URL.");
         //}
