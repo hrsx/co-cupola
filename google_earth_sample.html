@@ -59,7 +59,7 @@
       var content = document.getElementById('content');
       google.earth.createInstance('content', initCB, failureCB);
 
-      window.setInterval("update()", 100);
+      window.setInterval("update()", 1000);
       console.log("Longitude: " + getGeo()['longitude'] + " Latitude: " + getGeo()['latitude'] + " Altitude: " + getGeo()['altitude']);
     }
     
@@ -126,7 +126,7 @@
 
       //ge.getView().setAbstractView(lookAt);
       var camera = ge.getView().copyAsCamera(ge.ALTITUDE_RELATIVE_TO_GROUND);
-      camera.setAltitude(30000);
+      //camera.setAltitude(30000);
       ge.getView().setAbstractView(camera);
     }
     
