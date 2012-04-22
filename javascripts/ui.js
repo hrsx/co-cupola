@@ -62,7 +62,7 @@ console.log("type="+type+"\n");
 		// Specify a path to the image and set as the icon
 		var icon = ge.createIcon('');
 
-		icon.setHref("http://co-cupola.github.com/co-cupola/imgs/cupola_mask_"+type+".gif");
+		icon.setHref("http://co-cupola.github.com/co-cupola/imgs/cupola_mask_"+type+".png");
 		screenOverlay.setIcon(icon);
 
 		// Set the ScreenOverlay's position in the window
@@ -131,7 +131,7 @@ console.log("type="+type+"\n");
 			createMaskWindow(0);
 			key1Overlay=createScreenOverlayButton(10, 10, 128, 32,'setting',onKey1Down); 
 			key2Overlay=createScreenOverlayButton(20+128, 10,128, 32,'black',onKey2Down); 
-			key3Overlay=createScreenOverlayButton(30+256, 10,128, 32,'winodw',onKey3Down); 
+			key3Overlay=createScreenOverlayButton(30+256, 10,128, 32,'window',onKey3Down); 
 		}
 	}
 
