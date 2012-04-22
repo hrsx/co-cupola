@@ -62,7 +62,7 @@ console.log("type="+type+"\n");
 		// Specify a path to the image and set as the icon
 		var icon = ge.createIcon('');
 
-		icon.setHref("http://co-cupola.github.com/co-cupola/imgs/cupola_mask_"+type+".png");
+		icon.setHref("./imgs/cupola_mask_"+type+".png");
 		screenOverlay.setIcon(icon);
 
 		// Set the ScreenOverlay's position in the window
