@@ -131,7 +131,7 @@ console.log("type="+type+"\n");
 			createMaskWindow(0);
 			key1Overlay=createScreenOverlayButton(10, 10, 128, 32,'setting',onKey1Down); 
 			key2Overlay=createScreenOverlayButton(20+128, 10,128, 32,'black',onKey2Down); 
-			key3Overlay=createScreenOverlayButton(30+256, 10,128, 32,'window',onKey3Down); 
+			key3Overlay=createScreenOverlayButton(30+256, 10,128, 32,'winodw',onKey3Down); 
 		}
 	}
 
@@ -180,7 +180,7 @@ console.log("type="+type+"\n");
 	  var _addOverlayForState = function(suffix, drawOrder, visible) {
 	    // Create the loading overlay.
 	    var icon = ge.createIcon('');
-		var filepath = 'http://co-cupola.github.com/co-cupola/imgs/'+ filename + suffix + '.gif';
+		var filepath = 'http://co-cupola.github.com/co-cupola/imgs/'+ filename + suffix + '.png';
 	    icon.setHref(filepath);
 
 	//console.log("filepath="+filepath+"\n");
