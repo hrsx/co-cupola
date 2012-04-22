@@ -9,41 +9,34 @@
     <script type="text/javascript" src="https://raw.github.com/lizard-isana/orb.js/master/core.js"></script>
     <script type="text/javascript" src="https://raw.github.com/lizard-isana/orb.js/master/satellite.js"></script>
     <script type="text/javascript">
+    
     var geo = null;
+    
     function getGeo() {
       //var tle = {
       //  "first_line":  "1 25544U 98067A   11318.51274148  .00016717  00000-0  10270-3 0  9003",
       //  "second_line": "2 25544  51.6365 124.1685 0021724  56.2169 304.1052 15.60123650 24381"
       //}
-      var tle = loadTLE();
-      console.log(tle);  // Just Debug!!
+      var tle;
+      var url = "http://www.crosshat.com/co-cupola/tle.cgi";
+      var http_request = new XMLHttpRequest();
+      http_request.open("GET", url, true);
+      http_request.onreadystatechange = function() {
+        if(http_request.readyState == 4) {
+          if(http_request.status == 200 || http_request.status == 201) {
+            tle = http_request.responseText;
+          } else {
+            console.log("TLE CGI ERROR!");
+          }
+        }
+        http_request.send(null);
+      }
+
       var satellite = new Orb.Satellite(tle);
       var date = new Date();
       var time = new Orb.Time(date);
       geo = satellite.position.geographic(time);
       return geo;
-    }
-
-    function loadTLE() {
-      var responseText;
-      var url = "http://www.crosshat.com/co-cupola/tle.cgi";
-      var httpRequest = new XMLHttpRequest();
-
-      httpRequest.open("GET", url, true);
-      //console.log(httpRequest);
-
-      httpRequest.onreadystatechange = function() {
-        if(httpRequest.readyState == 4 && httpRequest.status == 200) {
-          //console.log(httpRequest.responseText);
-          //responseText = eval( "(" + httpRequest.responseText + ")" );
-        } else {
-        //  console.log("There was a problem with the TLE URL.");
-        }
-        //httpRequest = null;
-      }
-      httpRequest.send(null);
-      console.log(httpRequest.responseText);
-      return httpRequest.responseText;
     }
 
     var ge;
