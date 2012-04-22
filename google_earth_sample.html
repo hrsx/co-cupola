@@ -25,6 +25,7 @@
         if(http_request.readyState == 4) {
           if(http_request.status == 200 || http_request.status == 201) {
             tle = eval("(" + http_request.responseText + ")");
+            console.log(tle);
           } else {
             console.log("TLE CGI ERROR!");
           }
