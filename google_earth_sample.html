@@ -40,7 +40,7 @@
         http_request.send(null);
       }
 
-      var satellite = new Orb.Satellite(tle_json);
+      var satellite = new Orb.Satellite(tle);
       var date = new Date();
       var time = new Orb.Time(date);
       geo = satellite.position.geographic(time);
