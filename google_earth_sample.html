@@ -25,7 +25,7 @@
     }
 
     function loadTLE() {
-      var tle;
+      var responseText;
       var url = "http://www.crosshat.com/co-cupola/tle.cgi";
       var httpRequest = new XMLHttpRequest();
 
@@ -33,15 +33,15 @@
       console.log(httpRequest);
 
       httpRequest.onreadystatechange = function() {
-        if(httpRequest.readyState == 4 && httpRequest.status == 200) {
-          tle = eval( "(" + httpRequest.responseText + ")" );
-        } else {
-          console.log("There was a problem with the TLE URL.");
-        }
+        //if(httpRequest.readyState == 4 && httpRequest.status == 200) {
+          responseText = eval( "(" + httpRequest.responseText + ")" );
+        //} else {
+        //  console.log("There was a problem with the TLE URL.");
+        //}
         httpRequest = null;
       }
       httpRequest.send(null);
-      return tle;
+      return responseText;
     }
 
     var ge;
