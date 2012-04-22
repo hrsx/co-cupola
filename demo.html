@@ -91,26 +91,26 @@
       google.earth.addEventListener(ge.getWindow(), "click", handleMouseClick);
 
 	  // Create the ScreenOverlay
-	  var screenOverlay = ge.createScreenOverlay('');
+	  //var screenOverlay = ge.createScreenOverlay('');
 
 	  // Specify a path to the image and set as the icon
-	  var icon = ge.createIcon('');
-	  icon.setHref("http://co-cupola.github.com/co-cupola/imgs/cupola-mask_1280x800.png");
-	  screenOverlay.setIcon(icon);
+	  //var icon = ge.createIcon('');
+	  //icon.setHref("http://co-cupola.github.com/co-cupola/imgs/cupola-mask_1280x800.png");
+	  //screenOverlay.setIcon(icon);
 
 	  // Set the ScreenOverlay's position in the window
-      var samplecontainer = document.getElementById('fullscreencontainer');
+      //var samplecontainer = document.getElementById('fullscreencontainer');
 
-	  screenOverlay.getOverlayXY().setXUnits(ge.UNITS_PIXELS);
-	  screenOverlay.getOverlayXY().setYUnits(ge.UNITS_PIXELS);
-	  screenOverlay.getOverlayXY().setX(samplecontainer.offsetWidth/2);
-	  screenOverlay.getOverlayXY().setY(samplecontainer.offsetHeight/2);
+	  //screenOverlay.getOverlayXY().setXUnits(ge.UNITS_PIXELS);
+	  //screenOverlay.getOverlayXY().setYUnits(ge.UNITS_PIXELS);
+	  //screenOverlay.getOverlayXY().setX(samplecontainer.offsetWidth/2);
+	  //screenOverlay.getOverlayXY().setY(samplecontainer.offsetHeight/2);
 
 	  // Set the overlay's size in pixels
-	  screenOverlay.getSize().setXUnits(ge.UNITS_PIXELS);
-	  screenOverlay.getSize().setYUnits(ge.UNITS_PIXELS);
-	  screenOverlay.getSize().setX(samplecontainer.offsetWidth);
-	  screenOverlay.getSize().setY(samplecontainer.offsetHeight);
+	  //screenOverlay.getSize().setXUnits(ge.UNITS_PIXELS);
+	  //screenOverlay.getSize().setYUnits(ge.UNITS_PIXELS);
+	  //screenOverlay.getSize().setX(samplecontainer.offsetWidth);
+	  //screenOverlay.getSize().setY(samplecontainer.offsetHeight);
 
 	  // Specify the point in the image around which to rotate
 	  //screenOverlay.getRotationXY().setXUnits(ge.UNITS_FRACTION);
@@ -122,7 +122,7 @@
 	  //screenOverlay.setRotation(25);
 
 	  // Add the ScreenOverlay to Earth
-	  ge.getFeatures().appendChild(screenOverlay);
+	  //ge.getFeatures().appendChild(screenOverlay);
 
       //ge.getView().setAbstractView(lookAt);
       var camera = ge.getView().copyAsCamera(ge.ALTITUDE_RELATIVE_TO_GROUND);
