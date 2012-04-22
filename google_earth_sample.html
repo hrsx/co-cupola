@@ -28,6 +28,7 @@
       var tle;
       var url = "http://www.crosshat.com/co-cupola/tle.cgi";
       var httpRequest = new XMLHttpRequest();
+      console.log(httpRequest);
       httpRequest.open("GET", url, true);
       httpRequest.onreadystatechange = function() {
         if(httpRequest.readyState == 4 && httpRequest.status == 201) {
