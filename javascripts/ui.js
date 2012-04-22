@@ -21,14 +21,22 @@
 		}
 		if(screenOverlay!==null){
 			// Set the overlay's size in pixels
-			var w=1280*parseFloat(per)/100.0;
-			var h=1280*parseFloat(per)/100.0;
+			var minPer;
+			
+			if(samplecontainer.offsetWidth>samplecontainer.offsetHeight){
+				minPer=samplecontainer.offsetWidth/1280.0;
+			}else{
+				minPer=samplecontainer.offsetHeight/1280.0;
+			}
+			var w=1280*parseFloat(per)/100.0*minPer;
+			var h=800*parseFloat(per)/100.0*minPer;
 
-console.log("h="+h+" oh="+samplecontainer.offsetHeight+"\n");
+console.log("h="+h+" samplecontainer.offsetWidth="+samplecontainer.offsetWidth+"\n");
 			screenOverlay.getSize().setXUnits(ge.UNITS_PIXELS);
 			screenOverlay.getSize().setYUnits(ge.UNITS_PIXELS);
 			screenOverlay.getSize().setX(w);
 			screenOverlay.getSize().setY(h);
+console.log("h="+h+" w="+w+"\n");
 		}
 	}
 	
@@ -49,10 +57,6 @@ console.log("h="+h+" oh="+samplecontainer.offsetHeight+"\n");
 		}
 
 console.log("type="+type+"\n");
-		//追加のないtype===0はリターン
-		if(type===0){
-			return;
-		}
 
 		//-----マスク画像生成
 		// Specify a path to the image and set as the icon
@@ -101,7 +105,7 @@ console.log("type="+type+"\n");
 		//-----もろもろのボタン
 		// create the buttons
 		// x, y, width, height
-		if(plusOverlay===null){
+		if(key1Overlay===null){
 			var ajustPlus = function(){
 				screenPercent++;
 				updateMaskWindow();
@@ -122,11 +126,12 @@ console.log("type="+type+"\n");
 		      createMaskWindow(2);
 			};
 
-			plusOverlay=createScreenOverlayButton(10, 10, 40, 50,'plus',ajustPlus); 
-			minusOverlay=createScreenOverlayButton(70, 10, 40, 50,'minus',ajustMinus); 
-			key1Overlay=createScreenOverlayButton(130, 10, 40, 50,'1',onKey1Down); 
-			key2Overlay=createScreenOverlayButton(190, 10, 40, 50,'2',onKey2Down); 
-			key3Overlay=createScreenOverlayButton(250, 10, 40, 50,'3',onKey3Down); 
+//			plusOverlay=createScreenOverlayButton(10, 10, 40, 50,'plus',ajustPlus); 
+//			minusOverlay=createScreenOverlayButton(70, 10, 40, 50,'minus',ajustMinus); 
+			createMaskWindow(0);
+			key1Overlay=createScreenOverlayButton(10, 10, 128, 32,'setting',onKey1Down); 
+			key2Overlay=createScreenOverlayButton(20+128, 10,128, 32,'black',onKey2Down); 
+			key3Overlay=createScreenOverlayButton(30+256, 10,128, 32,'window',onKey3Down); 
 		}
 	}
 
