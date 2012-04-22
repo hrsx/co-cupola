@@ -59,7 +59,7 @@
       var content = document.getElementById('content');
       google.earth.createInstance('content', initCB, failureCB);
 
-      window.setInterval("update()", 1000);
+      window.setInterval("update()", 100);
       console.log("Longitude: " + getGeo()['longitude'] + " Latitude: " + getGeo()['latitude'] + " Altitude: " + getGeo()['altitude']);
     }
     
@@ -80,7 +80,7 @@
       ge.getOptions().setOverviewMapVisibility(true);
       ge.getOptions().setScaleLegendVisibility(true);  // Just Debug!!
 
-      ge.getOptions().setFlyToSpeed(5.0);
+      ge.getOptions().setFlyToSpeed(1.0);
       ge.getOptions().setUnitsFeetMiles(false);
       ge.getOptions().setTerrainExaggeration(2.5);
 
